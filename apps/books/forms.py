@@ -1,5 +1,6 @@
 from django.forms import ModelForm, IntegerField, Widget, Textarea
 from apps.books.models import BookReview
+from django import forms
 
 
 # class Textarea(Widget):
@@ -17,6 +18,11 @@ class AddBookReviewForm(ModelForm):
     rating = IntegerField(min_value=1, max_value=5)
     body = Textarea(attrs={"rows": "3"})
 
+    class Meta:
+        model = BookReview
+        fields = ("body", "rating")
+
+class ReviewUpdateForm(forms.ModelForm):
     class Meta:
         model = BookReview
         fields = ("body", "rating")

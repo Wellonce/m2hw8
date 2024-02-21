@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
 
+
 from apps.users.forms import UserRegisterForm, UserLoginForm
 
 
@@ -43,3 +44,5 @@ class UserLoginView(View):
                 messages.error(request, "Invalid username or password")
         else:
             return render(request, "users/login.html", {"form": form})
+
+

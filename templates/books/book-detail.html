@@ -58,6 +58,10 @@
                                 class="fw-lighter">{{ review.like_count }} likes </span>
                         </div>
                     </div>
+                    <div>
+                        <button type="submit" ><a href="{% url 'books:review-delete' review.pk %}">Delete the Review</a></button>
+                        <button type="submit" ><a href="{% url 'books:review-update' review.pk %}">Update the Review</a></button>
+                    </div>
                 {% endfor %}
 
             </div>
